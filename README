@@ -1,0 +1,16 @@
+for logout issue,
+
+just I got resolved like below in hook_svmods_facebook_connect.php
+
+else if (request_var(‘mode’,”)===’logout’){
+$cookies=array_keys($_COOKIE);
+$domain=’.’.$config['cookie_domain'];
+foreach($cookies as $cookie){
+$when=time()-3600;
+setcookie($cookie, “”, $when, “/”, $domain);
+}
+//if (isset($_COOKIE['fbs_'.$config['svmods_facebook_app_id']])){
+//	setcookie(‘fbs_’.$config['svmods_facebook_app_id'],NULL,time(),’/');
+//	unset($_COOKIE['fbs_'.$config['svmods_facebook_app_id']]);
+//}
+}
