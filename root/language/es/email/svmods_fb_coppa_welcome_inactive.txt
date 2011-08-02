@@ -1,0 +1,42 @@
+Asunto: Bienvenido a "{SITENAME}"
+
+{WELCOME_MSG}
+
+En cumplimiento de la ley COPPA, su cuenta está actualmente inactiva.
+
+Por favor imprima este mensaje y que su padre o tutor firme y ponga la fecha. A continuación, enviarlo por fax a:
+
+{FAX_INFO}
+
+O un correo a:
+
+{MAIL_INFO}
+
+------------------------------ CORTAR POR AQUÍ ------------------------------
+Permiso para participar en "{SITENAME}" - {U_BOARD}
+
+Usuario: {USERNAME}
+E-mail: {EMAIL_ADDRESS}
+
+He revisado la información proporcionada por mi hijo y doy permiso a "{SITENAME}" para almacenar esta información. 
+Entiendo que esta información se puede cambiar en cualquier momento introduciendo una contraseña. 
+Yo entiendo que puedo solicitar la eliminación de esta información de "{SITENAME}" en cualquier momento.
+
+
+Padre o tutor 
+(ponga su nombre aquí): _____________________
+
+(firma aquí): __________________ 
+
+Fecha: _______________
+
+------------------------------ CORTAR POR AQUÍ ------------------------------
+
+
+Una vez que el administrador ha recibido el formulario de arriba a través de fax o correo, su cuenta se activará.
+
+Se ha creado una contraseña al azar para su cuenta, aunque no es necesaria al iniciar sesión con tu cuenta de Facebook. Se ha almacenado de forma segura en nuestra base de datos y no se puede recuperar. En el caso de que desees utilizar la entrada estándar, serás capaz de restaurar la original en la página de login con la dirección de correo electrónico asociada a su cuenta.
+
+Gracias por registrarte.
+
+{EMAIL_SIG}

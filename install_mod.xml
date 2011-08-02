@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.5.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[Facebook graph/connect logins and registration]]></title>
+		<description lang="en"><![CDATA[nables users to login and register to phpBB powered boards and sites with their Facebook accounts.]]></description>
+		<author-notes lang="en"><![CDATA[FDC ModX]]></author-notes>
+		<author-group>
+			<author>
+				<realname><![CDATA[Skinny Vinny]]></realname>
+				<username><![CDATA[Skinny Vinny]]></username>
+				<homepage><![CDATA[http://svmods.com/]]></homepage>
+			</author>
+		</author-group>
+		<mod-version>0.1 beta</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>60</time>
+			<target-version>3.0.7-PL1</target-version>
+		</installation>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/includes/hooks/hook_svmods_facebook_connect.php" to="includes/hooks/hook_svmods_facebook_connect.php"/>
+			<file from="root/language/en/email/svmods_fb_coppa_welcome_inactive.txt" to="language/en/email/svmods_fb_coppa_welcome_inactive.txt"/>
+			<file from="root/language/es/email/svmods_fb_coppa_welcome_inactive.txt" to="language/es/email/svmods_fb_coppa_welcome_inactive.txt"/>
+			<file from="root/includes/JSON.php" to="includes/JSON.php"/>
+			<file from="root/language/en/email/svmods_fb_admin_welcome_inactive.txt" to="language/en/email/svmods_fb_admin_welcome_inactive.txt"/>
+			<file from="root/language/en/email/svmods_fb_user_welcome.txt" to="language/en/email/svmods_fb_user_welcome.txt"/>
+			<file from="root/language/es/email/svmods_fb_admin_welcome_inactive.txt" to="language/es/email/svmods_fb_admin_welcome_inactive.txt"/>
+			<file from="root/language/es/email/svmods_fb_user_welcome.txt" to="language/es/email/svmods_fb_user_welcome.txt"/>			
+		</copy>
+		<open src="language/en/common.php">
+			<edit>
+				<find><![CDATA[	'YOU_NO_NEW_PM'		=> 'No new private messages are waiting for you.',]]></find>
+				<action type="after-add"><![CDATA[    'SVMODS_USE_FB_PIC'                        =>    'Use Facebook image',
+    'SVMODS_USE_FB_PIC_EXPLAIN'                =>    'Check to use your Facebook profile image as your avatar.',
+    'SVMODS_FACEBOOK_CONNECT_BUTTON_TEXT'    =>    'Connect your Facebook account',
+    'SVMODS_FACEBOOK_LOGIN_BUTTON_TEXT'        =>    'Login with Facebook!',
+    'SVMODS_FACEBOOK_REGISTER_BUTTON_TEXT'    =>    'Register with your Facebook account!',
+    'SVMODS_FB_LOGIN_COOKIE_ERROR'            =>    'An error appears to have occurred with your browser. If you wish to use the sites Facebook logins or registration features, please update/repair your browser, or use a different browser.<br /.<br />We applogize for the inconvenience.',
+    
+    'SVMODS_FACEBOOK_ACCOUNT_ADDED'            =>    'Thank you for registering, your account has been created. You may now login using your Facebook account.<br /><br />A random password has been created for your account. Should you wish to use the standard login in the future, you can reset your password through the password recovery link on the login page, or simply update it in the user control panel.',    
+    'SVMODS_FACEBOOK_MISMATCH'=>'The site account you are logged in with is associated with a different Facebook account. Please use that Facebook account when logging in.',
+	'SVMODS_FACEBOOK_NOW_ASSOCIATED'=>'Your Facebook account is now associated with your phpbb account.',
+	'SVMODS_FACEBOOK_INT'    =>    'Facebook Integration',
+	'SVMODS_FACEBOOK_INT_EXPLAIN'    =>    'Grant/revoke Facebook application authorization.',
+	'SVMODS_FACEBOOK_REVOKE'			=>	'Revoke Authorization',
+	'SVMODS_FACEBOOK_REVOKED'			=>	'The request to revoke application authorization was sent to Facebook. You can also check your application settings within Facebook itself to ensure it was successful.',
+	'SVMODS_FACEBOOK_NOT_REVOKED'		=>	'Your browser does not contain a current access token to revoke authorization. You can may do so on Facebook in the application settings of the account menu.',
+	'SVMODS_FACEBOOK_REGISTER_PAGE_TITLE'    =>    'Create/link your account with Facebook',    
+    'SVMODS_FACEBOOK_NEW_CONNECT_TEXT'        =>    'Existing users: login to link your Facebook account to your existing account.',
+    'SVMODS_FACEBOOK_NEW_REGISTER_TEXT'        =>    'New user? Register your username.',    
+    'SVMODS_FACEBOOK_NEW_REGISTER_TEXT'        =>    'By submitting your registration, you agree to the site <a href="ucp.php?mode=terms">terms of use</a> and <a href="ucp.php?mode=privacy">privacy policy</a>.',]]></action>
+			</edit>
+		</open>
+		<open src="language/es/common.php">
+			<edit>
+				<find><![CDATA[	'YOU_NO_NEW_PM'	=> 'No hay nuevos mensajes privados esperándole',]]></find>
+				<action type="after-add"><![CDATA[    'SVMODS_USE_FB_PIC'                        =>    'Usar imagen de Facebook',
+    'SVMODS_USE_FB_PIC_EXPLAIN'                =>    'Marcar para utilizar su imagen de perfil de Facebook como su avatar.',
+    'SVMODS_FACEBOOK_CONNECT_BUTTON_TEXT'    =>    'Conecta tu cuenta de Facebook',
+    'SVMODS_FACEBOOK_LOGIN_BUTTON_TEXT'        =>    'Conectate con Facebook!',
+    'SVMODS_FACEBOOK_REGISTER_BUTTON_TEXT'    =>    'Registrate con tu cuenta de Facebook!',
+    'SVMODS_FB_LOGIN_COOKIE_ERROR'            =>    'Un error parece haber ocurrido con el navegador. Si deseas usar los  inicios de sesión o funciones de registro Facebook en los sitios, por favor, actualice o repare su navegador, o usar otro navegador.<br /.<br />Sentimos las molestias.',
+    
+    'SVMODS_FACEBOOK_ACCOUNT_ADDED'            =>    'Gracias por registrarse, su cuenta ha sido creada. Ahora puedes iniciar la sesión utilizando tu cuenta de Facebook.<br /><br />Una contraseña al azar se ha creado para su cuenta. Si desea utilizar la entrada estándar en el futuro, puede restablecer su contraseña a través del enlace de recuperación de contraseña en la página de entrada, o simplemente ponerlo al día en el panel de control de usuario.',    
+    'SVMODS_FACEBOOK_MISMATCH'=>'La cuenta de sitio con la que se ha identificado se asocia con otra cuenta de Facebook diferente. Por favor, use esa cuenta al iniciar sesión en Facebook.',
+	'SVMODS_FACEBOOK_NOW_ASSOCIATED'=>'Tu cuenta de Facebook está ahora asociada con su cuenta de phpBB.',
+	'SVMODS_FACEBOOK_INT'    =>    'Facebook Integración',
+	'SVMODS_FACEBOOK_INT_EXPLAIN'    =>    'Subvención/revocar la autorización de aplicación de Facebook.',
+	'SVMODS_FACEBOOK_REVOKE'			=>	'Revocar autorización',
+	'SVMODS_FACEBOOK_REVOKED'			=>	'La petición de revocar la autorización solicitud fue enviada a Facebook. También puedes revisar su configuración de la aplicación dentro de Facebook para asegurarte que fue exitoso.',
+	'SVMODS_FACEBOOK_NOT_REVOKED'		=>	'Su navegador no contiene una ficha de acceso actual de revocar la autorización. Puede hacerlo en Facebook en la configuración de la aplicación en el menú de la cuenta.',
+	'SVMODS_FACEBOOK_REGISTER_PAGE_TITLE'    =>    'Crear o enlazar su cuenta con Facebook',    
+    'SVMODS_FACEBOOK_NEW_CONNECT_TEXT'        =>    'Usuarios existentes: identificación de vincular tu cuenta de Facebook a su cuenta existente.',
+    'SVMODS_FACEBOOK_NEW_REGISTER_TEXT'        =>    '¿Nuevo usuario? Registre su nombre de usuario.',    
+    'SVMODS_FACEBOOK_NEW_REGISTER_TEXT'        =>    'Al enviar su registro, usted está de acuerdo con los <a href="ucp.php?mode=terms">términos de uso</a> y la <a href="ucp.php?mode=privacy">politica de privacidad</a>.',]]></action>
+			</edit>
+		</open>		
+		<open src="styles/prosilver/template/index_body.html">
+			<edit>
+				<find><![CDATA[			<input type="submit" name="login" value="{L_LOGIN}" class="button2" />]]></find>
+				<action type="after-add"><![CDATA[			{SVMODS_FACEBOOK_LOGIN_BUTTON}]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/login_body.html">
+			<edit>
+				<find><![CDATA[		<!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[      <dl>
+         <dt></dt>
+         <dd>{SVMODS_FACEBOOK_LOGIN_BUTTON}</dd>
+      </dl>
+       <dl>]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/overall_footer.html">
+			<edit>
+				<find><![CDATA[</body>]]></find>
+				<action type="before-add"><![CDATA[{SVMODS_FACEBOOK_JS}]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/overall_header.html">
+			<edit>
+				<find><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">]]></find>
+				<inline-edit>
+					<inline-find><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"]]></inline-find>
+					<inline-action type="after-add"><![CDATA[ {SVMODS_FACEBOOK_XMLNS}]]></inline-action>
+				</inline-edit>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_avatar_options.html">
+			<edit>
+				<find><![CDATA[	<!-- IF S_LINK_AVATAR -->]]></find>
+				<action type="after-add"><![CDATA[  <!-- IF SVMODS_FACEBOOK_UID -->
+       <dl>
+         <dt><label for="uploadurl">{SVMODS_USE_FB_PIC}:</label><br /><span>{SVMODS_USE_FB_PIC_EXPLAIN}</span></dt>
+         <dd><input type="checkbox" name="svmods_use_fb_pic" id="svmods_use_fb_pic" value="{SVMODS_FACEBOOK_UID}" />&nbsp;{SVMODS_USE_FB_PIC}</dd>
+      </dl>
+    <!-- ENDIF -->
+]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_prefs_personal.html">
+			<edit>
+				<find><![CDATA[	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[  <!-- IF SVMODS_FACEBOOK_APP_ID -->
+    <dl>
+		<dt><label>{SVMODS_FACEBOOK_INT}:</label><br /><span>{SVMODS_FACEBOOK_INT_EXPLAIN}</span></dt>
+		<dd><!-- IF SVMODS_FACEBOOK_UID --><input type='submit' name='svmods_revoke_fb' value='{SVMODS_FACEBOOK_REVOKE}' /><!-- ELSE -->{SVMODS_FACEBOOK_LOGIN_BUTTON}<!-- ENDIF --></dd>
+	</dl>
+    <!-- ENDIF -->
+]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_register.html">
+			<edit>
+				<find><![CDATA[	<!-- IF L_REG_COND -->
+		<dl><dd><strong>{L_REG_COND}</strong></dd></dl>
+	<!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[    <dl>
+      <dt></dt>
+      <dd>{SVMODS_FACEBOOK_REGISTER_BUTTON}</dd>
+    </dl>]]></action>
+			</edit>
+		</open>
+		<diy-instructions lang="en"><![CDATA[Purge the cache from the ACP index, then visit the 'board settings' page. You should find the added fields to enter your fb app id, fb secret, and that option to use the svmods remote redirect.
+
+Read more: http://svmods.com/viewtopic.php?f=7&t=4#ixzz0viT27Dwx]]></diy-instructions>
+	</action-group>
+</mod>

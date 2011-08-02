@@ -1,0 +1,19 @@
+Asunto: Bienvenido a "{SITENAME}"
+
+{WELCOME_MSG}
+
+Por favor, mantenga este e-mail para sus registros. La información de su cuenta es la siguiente:
+
+----------------------------
+Usuario: {USERNAME}
+
+URL del sitio: {U_BOARD}
+----------------------------
+
+Su cuenta está actualmente inactiva y tendrá que ser aprobado por un administrador antes de iniciar la sesión. Otro correo electrónico será enviado cuando esto haya ocurrido.
+
+Se ha creado una contraseña al azar para su cuenta, aunque no es necesaria al iniciar sesión con tu cuenta de Facebook. Se ha almacenado de forma segura en nuestra base de datos y no se puede recuperar. En el caso de que desees utilizar la entrada estándar, serás capaz de restaurar la original en la página de login con la dirección de correo electrónico asociada a su cuenta.
+
+Gracias por registrarte.
+
+{EMAIL_SIG}

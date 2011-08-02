@@ -1,0 +1,19 @@
+Subject: Welcome to "{SITENAME}"
+
+{WELCOME_MSG}
+
+Please keep this e-mail for your records. Your account information is as follows:
+
+----------------------------
+Username: {USERNAME}
+
+Board URL: {U_BOARD}
+----------------------------
+
+Your account is currently inactive and will need to be approved by an administrator before you can log in. Another email will be sent when this has occured.
+
+A random password has been created for your account, though it is not needed when logging in with your Facebook account. It has been securely stored in our database and cannot be retrieved. In the event that you wish to use the standard login, you will be able to reset it from the login page using the email address associated with your account.
+
+Thank you for registering.
+
+{EMAIL_SIG}

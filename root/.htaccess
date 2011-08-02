@@ -1,0 +1,38 @@
+#
+# Uncomment the statement below if you want to make use of
+# HTTP authentication and it does not already work.
+# This could be required if you are for example using PHP via Apache CGI.
+#
+#<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+#</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^facebookuserimage([0-9]+).jpg/?$ http://graph.facebook.com/$1/picture [QSA,L,R=301]
+
+# MyOwn Redirection
+RewriteCond %{HTTP_HOST} ^ib.ubdisk.org [NC]
+RewriteRule ^(.*) http://www.imdb.com/$1 [R=302,L]
+ErrorDocument 404 /404.html
+# For redirecting www.yourdomain.com to yourdomain.com,
+# uncomment the following 2 lines and edit domain 
+RewriteCond %{HTTP_HOST} ^www.ubdisk.org$
+RewriteRule ^(.*)/?$ http://ubdisk.org/$1 [QSA,R=301]
+
+# For redirecting yourdomain.com to www.yourdomain.com,
+# uncomment the following 2 lines and edit domain
+#RewriteCond %{HTTP_HOST} ^yourdomain.com$
+#RewriteRule ^(.*)/?$ http://www.yourdomain.com/$1 [QSA,R=301]
+</IfModule>
+
+<Files "config.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+<Files "common.php">
+Order Allow,Deny
+Deny from All
+</Files>
